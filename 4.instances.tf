@@ -7,8 +7,9 @@ resource "aws_instance" "bia-terraform" {
       ambiente = "terraform"
     }
     root_block_device {
-      volume_size = 8
+      volume_size = 10
       volume_type = "gp3"
     }
-    
+    iam_instance_profile = aws_iam_instance_profile.role_acesso_ssm.name
+    user_data = "${file("userdata-bia-terraform.sh")}"
 }   
