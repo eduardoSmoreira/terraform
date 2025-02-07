@@ -14,4 +14,4 @@ variable "instance_type" {
   type        = string
   description = "Instance Type"
   default     = "t3.micro"
-}
+}a

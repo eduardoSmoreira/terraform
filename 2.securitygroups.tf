@@ -17,4 +17,4 @@ resource "aws_security_group" "bia_terraform" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
+}a
