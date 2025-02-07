@@ -9,3 +9,9 @@ variable "vpc-name" {
   description = "ID da VPC"
   default     = "vpc-0c1423d037d76a673"
 }
+
+variable "instance_type" {
+  type        = string
+  description = "Instance Type"
+  default     = "t3.micro"
+}
