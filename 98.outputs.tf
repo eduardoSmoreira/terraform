@@ -13,12 +13,7 @@ output "instance_public_id" {
   value       = aws_instance.bia-terraform.public_ip
 }
 
-output "instance_tags" {
-  description = "Tags da EC2"
-  value       = aws_instance.bia-terraform.tags_all
-}
-
-output "instance_security_groups" {
-  description = "SG da EC2"
-  value       = aws_instance.bia-terraform.security_groups
+output "rds_endpoint" {
+  description = "Endpoint BIA Database"
+  value       = aws_db_instance.bia.endpoint
 }

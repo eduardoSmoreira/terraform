@@ -11,5 +11,5 @@ resource "aws_instance" "bia-terraform" {
       volume_type = "gp3"
     }
     iam_instance_profile = aws_iam_instance_profile.role_acesso_ssm.name
-    user_data = "${file("userdata-bia-terraform.sh")}"
+    user_data = "${file("scripts/userdata-bia-terraform.sh")}"
 }   
