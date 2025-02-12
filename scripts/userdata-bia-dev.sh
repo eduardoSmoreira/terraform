@@ -32,8 +32,8 @@ curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
 sudo yum install -y nodejs
 
 #Subindo a BIA
-sudo su ec2-user
-cd /home/ec2-user
-git clone https://github.com/henrylle/bia
-cd bia
-docker compose up -d
+#sudo su ec2-user
+#cd /home/ec2-user
+#git clone https://github.com/henrylle/bia
+#cd bia
+#docker compose up -d
