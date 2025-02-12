@@ -1,13 +1,18 @@
-# __generated__ by Terraform
-# Please review these resources and move them into your main configuration files.
+# SUBNET GROUP 
 
-# __generated__ by Terraform
+resource "aws_db_subnet_group" "bia-db-subnet-group" {
+  name = "bia-db-subnet-group"
+  subnet_ids = [local.subnet_zone_a,local.subnet_zone_b]
+  tags = {name="bia-db-subnet-group"}
+}
+
+# DATABASE
+
 resource "aws_db_instance" "bia" {
   allocated_storage                     = 20
   allow_major_version_upgrade           = null
   apply_immediately                     = null
   auto_minor_version_upgrade            = true
-  availability_zone                     = "us-east-1f"
   backup_retention_period               = 0
   backup_target                         = "region"
   backup_window                         = "04:54-05:24"
@@ -17,7 +22,6 @@ resource "aws_db_instance" "bia" {
   custom_iam_instance_profile           = null
   customer_owned_ip_enabled             = false
   db_name                               = null
-  db_subnet_group_name                  = "default-vpc-0c1423d037d76a673"
   dedicated_log_volume                  = false
   delete_automated_backups              = true
   deletion_protection                   = false
@@ -39,7 +43,7 @@ resource "aws_db_instance" "bia" {
   kms_key_id                            = "arn:aws:kms:us-east-1:961341523711:key/a376d2e5-6239-4a10-a518-bb61e22f4476"
   license_model                         = "postgresql-license"
   maintenance_window                    = "sat:09:06-sat:09:36"
-  manage_master_user_password           = null
+  manage_master_user_password           = true
   master_user_secret_kms_key_id         = null
   max_allocated_storage                 = 1000
   monitoring_interval                   = 0
@@ -68,4 +72,5 @@ resource "aws_db_instance" "bia" {
   upgrade_storage_config                = null
   username                              = "postgres"
   vpc_security_group_ids                = [aws_security_group.bia_db.id]
+  db_subnet_group_name                  = aws_db_subnet_group.bia-db-subnet-group.name
 }

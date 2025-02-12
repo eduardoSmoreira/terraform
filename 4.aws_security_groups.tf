@@ -27,7 +27,7 @@ resource "aws_security_group" "bia_dev" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = var.vpc-name
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia_alb" {
@@ -79,7 +79,7 @@ resource "aws_security_group" "bia_alb" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = var.vpc-name
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia_ec2" {
@@ -111,7 +111,7 @@ resource "aws_security_group" "bia_ec2" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = var.vpc-name
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia_web" {
@@ -143,7 +143,7 @@ resource "aws_security_group" "bia_web" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = var.vpc-name
+  vpc_id                 = local.vpc_id
 }
 
 resource "aws_security_group" "bia_db" {
@@ -235,6 +235,6 @@ resource "aws_security_group" "bia_db" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = var.vpc-name
+  vpc_id                 = local.vpc_id
 }
 
