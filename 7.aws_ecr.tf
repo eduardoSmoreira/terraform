@@ -1,7 +1,3 @@
-# __generated__ by Terraform
-# Please review these resources and move them into your main configuration files.
-
-# __generated__ by Terraform from "bia"
 resource "aws_ecr_repository" "bia" {
   force_delete         = true
   image_tag_mutability = "MUTABLE"
